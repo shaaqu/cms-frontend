@@ -1,17 +1,18 @@
 export class Location{
-  private readonly _address: string;
-  private readonly _openCloseHours: string;
+  private readonly address: string;
+  private readonly openCloseHours: string;
 
-  constructor(obj?: any) {
-    this._address = obj.address;
-    this._openCloseHours = obj.openCloseHours;
+
+  constructor(address: string, openCloseHours: string) {
+    this.address = address;
+    this.openCloseHours = openCloseHours;
   }
 
-  get address(): string {
-    return this._address;
+  getAddress(): string {
+    return this.address;
   }
 
-  get openCloseHours(): string {
-    return this._openCloseHours;
+  getOpenCloseHours(): string {
+    return this.openCloseHours;
   }
 }
