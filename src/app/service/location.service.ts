@@ -4,8 +4,6 @@ import {
   HttpHeaders
 } from '@angular/common/http';
 import { environment } from '../environment';
-import {Location} from "../dtos/Location";
-import {map, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
