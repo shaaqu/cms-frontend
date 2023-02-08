@@ -3,9 +3,9 @@ export class Location{
   private readonly openCloseHours: string;
 
 
-  constructor(address: string, openCloseHours: string) {
-    this.address = address;
-    this.openCloseHours = openCloseHours;
+  constructor(obj?: any) {
+    this.address = (obj && obj.address) || '';
+    this.openCloseHours = (obj && obj.openCloseHours) || '';
   }
 
   getAddress(): string {

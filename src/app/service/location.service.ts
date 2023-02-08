@@ -4,6 +4,8 @@ import {
   HttpHeaders
 } from '@angular/common/http';
 import { environment } from '../environment';
+import {Location} from "../dtos/Location";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class LocationService {
   apiUrl = environment.baseUrl;
   constructor(private http: HttpClient) {}
 
-  getLocations() {
-    return this.http.get<JSON>(`${this.apiUrl}/locations`);
+  getLocations(): Observable<any> {
+    return this.http.get<Location[]>(`${this.apiUrl}restaurant/info/location/1`);
   }
 }

@@ -1,7 +1,6 @@
-import {Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {Location} from "../dtos/Location";
 import {LocationService} from "../service/location.service";
-import {map} from "rxjs";
 
 @Component({
   selector: 'app-location',
@@ -10,26 +9,20 @@ import {map} from "rxjs";
 })
 export class LocationComponent implements OnInit {
 
-  locations: Array<Location>;
-
+  locations: Location[] = [];
 
   constructor(private locationService: LocationService) {
-    this.locations = new Array<Location>;
   }
 
   ngOnInit() {
-    this.getLocations()
+    this.getLocations();
   }
 
   private getLocations() {
     this.locationService.getLocations()
-      .pipe(
-        map(res => {
-          // @ts-ignore
-          return new Location(res['address'], res['openCloseHours']);
-        })
-      )
-      .subscribe(data => this.locations.push(data))
+      .subscribe(response => {
+        response.map((e: any) => this.locations.push(new Location(e)))
+      })
   }
 
 }
