@@ -10,8 +10,10 @@ import {LocationService} from "../service/location.service";
 export class LocationComponent implements OnInit {
 
   locations: Location[] = [];
+  isComponentVisible: boolean;
 
   constructor(private locationService: LocationService) {
+    this.isComponentVisible = false;
   }
 
   ngOnInit() {
@@ -21,7 +23,8 @@ export class LocationComponent implements OnInit {
   private getLocations() {
     this.locationService.getLocations()
       .subscribe(response => {
-        response.map((e: any) => this.locations.push(new Location(e)))
+        this.isComponentVisible = response.length > 0;
+        response.map((e: any) => this.locations.push(new Location(e)));
       })
   }
 

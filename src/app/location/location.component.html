@@ -1,13 +1,15 @@
-<div class="row" id="OurLocation">
-  <div class="col navMenu">
-    <h2 class="text-center">~ Our Location ~</h2>
+<div *ngIf="isComponentVisible">
+  <div class="row" id="OurLocation">
+    <div class="col navMenu">
+      <h2 class="text-center">~ Our Location ~</h2>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-3">
-    <h3>Address:</h3>
-    <p>Test street no 78963 </p>
-    <h3>Email:</h3>
-    <p>mail@example.com</p>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let location of locations">
+      <h3>Address:</h3>
+      <p>{{location.getAddress()}}</p>
+      <h3>Working hours:</h3>
+      <p>{{location.getAddress()}}</p>
+    </div>
   </div>
 </div>
