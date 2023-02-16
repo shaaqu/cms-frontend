@@ -1,34 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import {Reservation} from "../dtos/Reservation";
 
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
 })
-export class ReservationComponent implements OnInit{
-  
-  private date: string;
-  private duration: string;
-  private numberOfGuest: string;
-  private name: string;
-  private email: string;
-  private phoneNumber: string;
-  private message: string;
+export class ReservationComponent {
+
+  date: string;
+  duration: number;
+  numberOfGuests: number;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  message: string;
 
   constructor() {
     this.date = '';
-    this.duration = '';
-    this.numberOfGuest = '';
-    this.name = '';
-    this.email = '';
-    this.phoneNumber = '';
-    this.message = '';
-  }
-
-  ngOnInit(): void {
-    this.date = '';
-    this.duration = '';
-    this.numberOfGuest = '';
+    this.duration = 0;
+    this.numberOfGuests = 0;
     this.name = '';
     this.email = '';
     this.phoneNumber = '';
@@ -36,7 +27,8 @@ export class ReservationComponent implements OnInit{
   }
 
   createReservation() {
-    console.log(this.message)
+    console.log(new Reservation(this.date, this.duration, this.numberOfGuests, this.name, this.email, this.phoneNumber, this.message))
+
   }
 
 }
