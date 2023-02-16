@@ -10,7 +10,7 @@ import {ReservationService} from "../service/reservation.service";
 export class ReservationComponent {
 
   date: string;
-  duration: number;
+  timeTables: string;
   numberOfGuests: number;
   name: string;
   email: string;
@@ -19,7 +19,7 @@ export class ReservationComponent {
 
   constructor(private reservationService: ReservationService) {
     this.date = '';
-    this.duration = 0;
+    this.timeTables = '';
     this.numberOfGuests = 0;
     this.name = '';
     this.email = '';
@@ -28,7 +28,7 @@ export class ReservationComponent {
   }
 
   createReservation() {
-    this.reservationService.postReservation(new Reservation(this.date, this.duration, this.numberOfGuests, this.name, this.email, this.phoneNumber, this.message));
+    this.reservationService.postReservation(new Reservation(this.date, this.timeTables, this.numberOfGuests, this.name, this.email, this.phoneNumber, this.message));
   }
 
 }

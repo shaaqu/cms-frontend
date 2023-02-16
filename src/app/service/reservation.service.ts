@@ -13,7 +13,8 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   postReservation(reservation: Reservation) {
-    this.http.post(`${this.apiUrl}restaurant/reservation`, reservation)
-    console.log(reservation)
+    this.http.post(`${this.apiUrl}restaurant/reservation`, reservation).subscribe(res => {
+      console.log(res);
+    });
   }
 }

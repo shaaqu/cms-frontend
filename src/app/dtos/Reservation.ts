@@ -1,7 +1,7 @@
 export class Reservation {
 
-  private date: Date;
-  private duration: number;
+  private date: string;
+  private timeTables: string;
   private numberOfGuests: number;
   private name: string;
   private email: string;
@@ -9,10 +9,9 @@ export class Reservation {
   private message: string;
 
 
-  constructor(date: string, duration: number, numberOfGuests: number, name: string, email: string, phoneNumber: string, message: string) {
-    console.log(date)
-    this.date = new Date(date);
-    this.duration = duration;
+  constructor(date: string, timeTables: string, numberOfGuests: number, name: string, email: string, phoneNumber: string, message: string) {
+    this.date = date;
+    this.timeTables = timeTables;
     this.numberOfGuests = numberOfGuests;
     this.name = name;
     this.email = email;

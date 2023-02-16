@@ -11,7 +11,7 @@
                 <div class="form-group col-6">
                     <h3>Reserve</h3>
                     <label for="inputDate"> Date</label>
-                    <input type="date" class="form-control" id="inputDate" placeholder="Data gg/mm/aaaa" ng-model="date">
+                    <input type="date" class="form-control" id="inputDate" placeholder="Data gg-mm-aaaa" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="form-group col-6">
                     <h3>Details</h3>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="inputTime"> For how long?</label>
-                    <input type="number" class="form-control" id="inputTime" placeholder="Timetables" [(ngModel)]="duration" [ngModelOptions]="{standalone: true}">
+                    <input type="time" class="form-control" id="inputTime" placeholder="Timetables" [(ngModel)]="timeTables" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="form-group col-6">
                     <label for="inputEmail"> Email</label>
