@@ -10,6 +10,7 @@ export class Reservation {
 
 
   constructor(date: string, duration: number, numberOfGuests: number, name: string, email: string, phoneNumber: string, message: string) {
+    console.log(date)
     this.date = new Date(date);
     this.duration = duration;
     this.numberOfGuests = numberOfGuests;

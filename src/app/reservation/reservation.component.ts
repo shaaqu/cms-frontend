@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Reservation} from "../dtos/Reservation";
+import {ReservationService} from "../service/reservation.service";
 
 @Component({
   selector: 'app-reservation',
@@ -16,7 +17,7 @@ export class ReservationComponent {
   phoneNumber: string;
   message: string;
 
-  constructor() {
+  constructor(private reservationService: ReservationService) {
     this.date = '';
     this.duration = 0;
     this.numberOfGuests = 0;
@@ -27,8 +28,7 @@ export class ReservationComponent {
   }
 
   createReservation() {
-    console.log(new Reservation(this.date, this.duration, this.numberOfGuests, this.name, this.email, this.phoneNumber, this.message))
-
+    this.reservationService.postReservation(new Reservation(this.date, this.duration, this.numberOfGuests, this.name, this.email, this.phoneNumber, this.message));
   }
 
 }
