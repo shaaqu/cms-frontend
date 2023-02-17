@@ -7,12 +7,14 @@ import { LocationComponent } from './location/location.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReservationComponent } from './reservation/reservation.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationComponent,
-    ReservationComponent
+    ReservationComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
