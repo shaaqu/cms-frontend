@@ -17,6 +17,6 @@ export class LocationService {
   constructor(private http: HttpClient) {}
 
   getLocations(): Observable<any> {
-    return this.http.get<Location[]>(`${this.apiUrl}restaurant/info/location/1`);
+    return this.http.get<Location[]>(`${this.apiUrl}restaurant/info/location/2`);
   }
 }

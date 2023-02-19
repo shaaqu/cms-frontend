@@ -11,39 +11,38 @@ import {MenuPosition} from "../dtos/MenuPosition";
 export class MenuComponent implements OnInit {
 
   categories: MenuCategory[] = []
-  menuPositions: Map<MenuCategory, MenuPosition[]> = new Map()
+  menuPositions: Map<string, MenuPosition[]> = new Map()
 
 
   constructor(private menuService: MenuService) {
   }
 
   ngOnInit() {
-    this.getCategories();
-    this.getMenuPositions();
+    this.getMenu();
+    console.log(this.menuPositions)
   }
 
-  private getCategories() {
+  private getMenu() {
     this.menuService.getCategories()
       .subscribe(response => {
-        response.map((e: any) => this.categories.push(new MenuCategory(e)))
+        response.map((e: any) => {
+          let c = new MenuCategory(e);
+          this.categories.push(c);
+          this.menuPositions.set(c.getCategory(), this.getMenuPositions(c))
+        })
       })
   }
 
-  private getMenuPositions() {
-    for (let i = 0; i < this.categories.length; i++) {
-      this.getMenuPosition(this.categories[i])
-    }
-  }
-
-  private getMenuPosition(category: MenuCategory) {
+  private getMenuPositions(category: MenuCategory): MenuPosition[] {
+    console.log(category)
     let positions = new Array<MenuPosition>();
     this.menuService.getMenuPositionByCategory(category.getId()).subscribe(response => {
       response.map((e: any) => positions.push(new MenuPosition(e)))
     });
-    this.menuPositions.set(category, positions);
+    return positions;
   }
 
-  public listMenuPositions(category: MenuCategory): MenuPosition[] | undefined {
+  public listMenuByCategory(category: string): MenuPosition[] | undefined{
     return this.menuPositions.get(category);
   }
 

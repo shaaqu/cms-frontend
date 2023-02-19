@@ -4,7 +4,7 @@
       <h4 class="text-center">~ {{category.getCategory()}} ~</h4>
     </div>
   </div>
-  <div class="row bg-light" *ngFor="let position of listMenuPositions(category)">
+  <div class="row bg-light" *ngFor="let position of listMenuByCategory(category.getCategory())">
     <div class="col-md-4" data-aos="slide-up">
       <div class="card view zoom">
         <img class="card-img-top img-fluid " src="assets/images/meat-menu.jpg">

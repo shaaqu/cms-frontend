@@ -14,7 +14,7 @@ export class MenuService {
   constructor(private http: HttpClient) {}
 
   getCategories(): Observable<any> {
-    return this.http.get<Location[]>(`${this.apiUrl}menu/categories/1`);
+    return this.http.get<Location[]>(`${this.apiUrl}menu/categories/2`);
   }
 
   getMenuPositionByCategory(categoryId: number): Observable<any> {
