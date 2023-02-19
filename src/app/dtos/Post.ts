@@ -4,10 +4,10 @@ export class Post {
   private readonly _text: string;
   private readonly _img: string;
   constructor(obj?: any) {
-    this._id = (obj && obj._id) || 0;
-    this._title = (obj && obj._title) || '';
-    this._text = (obj && obj._text) || '';
-    this._img = (obj && obj._img) || '';
+    this._id = (obj && obj.id) || 0;
+    this._title = (obj && obj.title) || '';
+    this._text = (obj && obj.text) || '';
+    this._img = (obj && obj.img) || '';
   }
 
 

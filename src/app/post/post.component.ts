@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
     this.postService.getPosts()
       .subscribe(response => {
         this.isComponentVisible = response.length > 0;
-        response.map((e: any) => (const p = new Post(e)));
+        response.map((e: any) => this.posts.push(new Post(e)));
       })
   }
 }
