@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReservationComponent } from './reservation/reservation.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MenuComponent } from './menu/menu.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationComponent,
     ReservationComponent,
-    MenuComponent
+    MenuComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
