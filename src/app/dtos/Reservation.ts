@@ -1,7 +1,7 @@
 export class Reservation {
 
   private date: string;
-  private timeTables: string;
+  private time: string;
   private numberOfGuests: number;
   private name: string;
   private email: string;
@@ -11,7 +11,7 @@ export class Reservation {
 
   constructor(date: string, timeTables: string, numberOfGuests: number, name: string, email: string, phoneNumber: string, message: string) {
     this.date = date;
-    this.timeTables = timeTables;
+    this.time = timeTables;
     this.numberOfGuests = numberOfGuests;
     this.name = name;
     this.email = email;
